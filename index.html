@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>German B1 - Tematy</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<h1>German B1 - Tematy</h1>
+<p style="text-align: center;">Wybierz temat do nauki / Wähle ein Thema zum Lernen</p>
+
+<div class="lang-buttons">
+  <button onclick="setLangMenu('pl')">PL</button>
+  <button onclick="setLangMenu('ua')">UA</button>
+  <button onclick="setLangMenu('ru')">RU</button>
+  <button onclick="setLangMenu('ar')">AR</button>
+</div>
+
+<script>
+function setLangMenu(lang) {
+  const langs = ['pl', 'ua', 'ru', 'ar'];
+  
+  langs.forEach(l => {
+    document.querySelectorAll('.menu-translation.' + l).forEach(el => {
+      el.style.display = (lang === 'all' || lang === l) ? 'block' : 'none';
+    });
+  });
+}
+
+window.onload = () => setLangMenu('pl');
+</script>
+
+<ul>
+<li class="menu-item">
+  <a href="themen/verkehr.html">Verkehrsmittel: Privat oder Öffentlich</a>
+  <span class="menu-translation pl">Środki transportu: prywatne lub publiczne</span>
+  <span class="menu-translation ua">Транспорт: приватний чи громадський</span>
+  <span class="menu-translation ru">Транспорт: частный или общественный</span>
+  <span class="menu-translation ar">المواصلات: خاصة أو عامة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/hochzeit.html">Die Hochzeit - Traditionen und Bräuche</a>
+  <span class="menu-translation pl">Ślub - tradycje i zwyczaje</span>
+  <span class="menu-translation ua">Весілля - традиції та звичаї</span>
+  <span class="menu-translation ru">Свадьба - традиции и обычаи</span>
+  <span class="menu-translation ar">الزفاف - التقاليد والعادات</span>
+</li>
+<li class="menu-item">
+  <a href="themen/berufe.html">Berufe im Handwerk und im Büro</a>
+  <span class="menu-translation pl">Zawody rzemieślnicze i biurowe</span>
+  <span class="menu-translation ua">Професії: ремесло та офіс</span>
+  <span class="menu-translation ru">Профессии: ремесло и офис</span>
+  <span class="menu-translation ar">المهن: الحرف والمكاتب</span>
+</li>
+<li class="menu-item">
+  <a href="themen/einkaufen.html">Einkaufen: Markt, Bioladen, Supermarkt</a>
+  <span class="menu-translation pl">Zakupy: targ, sklep eko, supermarket</span>
+  <span class="menu-translation ua">Покупки: ринок, біомагазин, супермаркет</span>
+  <span class="menu-translation ru">Покупки: рынок, биомагазин, супермаркет</span>
+  <span class="menu-translation ar">التسوق: السوق، متجر عضوي، سوبرماركت</span>
+</li>
+<li class="menu-item">
+  <a href="themen/einkaufen-im-internet-oder-im-geschaeft.html">Einkaufen im Internet oder im Geschäft</a>
+  <span class="menu-translation pl">Zakupy przez internet czy w sklepie</span>
+  <span class="menu-translation ua">Покупки в інтернеті чи в магазині</span>
+  <span class="menu-translation ru">Покупки в интернете или в магазине</span>
+  <span class="menu-translation ar">التسوق عبر الإنترنت أو في المتجر</span>
+</li>
+<li class="menu-item">
+  <a href="themen/essen.html">Essen gehen oder selber kochen</a>
+  <span class="menu-translation pl">Jedzenie na mieście czy gotowanie samemu</span>
+  <span class="menu-translation ua">Їсти на городі чи готувати самому</span>
+  <span class="menu-translation ru">Есть в городе или готовить самому</span>
+  <span class="menu-translation ar">تناول الطعام خارجاً أم الطهي بنفسك</span>
+</li>
+<li class="menu-item">
+  <a href="themen/schule.html">Kindergarten und Schule</a>
+  <span class="menu-translation pl">Przedszkole i szkoła</span>
+  <span class="menu-translation ua">Дитячий садок і школа</span>
+  <span class="menu-translation ru">Детский сад и школа</span>
+  <span class="menu-translation ar">روضة الأطفال والمدرسة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/kinder.html">Kindererziehung: Medien für Kinder, draußen spielen</a>
+  <span class="menu-translation pl">Wychowanie dzieci: media, zabawa na zewnątrz</span>
+  <span class="menu-translation ua">Виховання дітей: медіа, гра надворі</span>
+  <span class="menu-translation ru">Воспитание детей: медиа, игра на улице</span>
+  <span class="menu-translation ar">تربية الأطفال: الوسائط، اللعب في الخارج</span>
+</li>
+<li class="menu-item">
+  <a href="themen/medien.html">Medien - Fernsehen, Internet, Zeitungen</a>
+  <span class="menu-translation pl">Media - telewizja, internet, gazety</span>
+  <span class="menu-translation ua">Медіа - телебачення, інтернет, газети</span>
+  <span class="menu-translation ru">Медиа - телевидение, интернет, газеты</span>
+  <span class="menu-translation ar">وسائل الإعلام - التلفزيون، الإنترنت، الصحف</span>
+</li>
+<li class="menu-item">
+  <a href="themen/haustiere.html">Haustiere</a>
+  <span class="menu-translation pl">Zwierzęta domowe</span>
+  <span class="menu-translation ua">Домашні тварини</span>
+  <span class="menu-translation ru">Домашние животные</span>
+  <span class="menu-translation ar">الحيوانات الأليفة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/altenheim.html">Altenheim oder leben/pflegen in der Familie</a>
+  <span class="menu-translation pl">Dom starców czy opieka w rodzinie</span>
+  <span class="menu-translation ua">Будинок для літніх чи догляд у родині</span>
+  <span class="menu-translation ru">Дом престарелых или уход в семье</span>
+  <span class="menu-translation ar">دار المسنين أم الرعاية في الأسرة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/feiertage.html">Feiertage, Feste, Geschenke</a>
+  <span class="menu-translation pl">Święta, uroczystości, prezenty</span>
+  <span class="menu-translation ua">Свята, урочистості, подарунки</span>
+  <span class="menu-translation ru">Праздники, торжества, подарки</span>
+  <span class="menu-translation ar">العطلات، الاحتفالات، الهدايا</span>
+</li>
+<li class="menu-item">
+  <a href="themen/krankheiten.html">Krankheiten: Apotheke und Hausmittel</a>
+  <span class="menu-translation pl">Choroby: apteka i domowe sposoby</span>
+  <span class="menu-translation ua">Хвороби: аптека і домашні засоби</span>
+  <span class="menu-translation ru">Болезни: аптека и домашние средства</span>
+  <span class="menu-translation ar">الأمراض: الصيدلية والعلاجات المنزلية</span>
+</li>
+<li class="menu-item">
+  <a href="themen/arzt.html">Krankheiten: Arztbesuch und Krankenhaus</a>
+  <span class="menu-translation pl">Choroby: wizyta u lekarza i szpital</span>
+  <span class="menu-translation ua">Хвороби: візит до лікаря та лікарня</span>
+  <span class="menu-translation ru">Болезни: визит к врачу и больница</span>
+  <span class="menu-translation ar">الأمراض: زيارة الطبيب والمستشفى</span>
+</li>
+<li class="menu-item">
+  <a href="themen/praktikum.html">Praktikum, Ausbildung, Weiterbildung</a>
+  <span class="menu-translation pl">Praktyki, nauka zawodu, dalsze kształcenie</span>
+  <span class="menu-translation ua">Практика, навчання, підвищення кваліфікації</span>
+  <span class="menu-translation ru">Практика, обучение, повышение квалификации</span>
+  <span class="menu-translation ar">التدريب، التكوين، التطوير المهني</span>
+</li>
+<li class="menu-item">
+  <a href="themen/stadt.html">Leben in der Groß- oder Kleinstadt/auf dem Land</a>
+  <span class="menu-translation pl">Życie w dużym/małym mieście lub na wsi</span>
+  <span class="menu-translation ua">Життя у великому/малому місті чи на селі</span>
+  <span class="menu-translation ru">Жизнь в большом/маленьком городе или в деревне</span>
+  <span class="menu-translation ar">العيش في المدينة الكبيرة/الصغيرة أو الريف</span>
+</li>
+<li class="menu-item">
+  <a href="themen/wohnen.html">Wohnung/Haus mieten oder kaufen</a>
+  <span class="menu-translation pl">Mieszkanie/dom - wynajem czy kupno</span>
+  <span class="menu-translation ua">Квартира/будинок - оренда чи купівля</span>
+  <span class="menu-translation ru">Квартира/дом - аренда или покупка</span>
+  <span class="menu-translation ar">استئجار أو شراء شقة/منزل</span>
+</li>
+<li class="menu-item">
+  <a href="themen/familie.html">Leben: Großfamilie, Kleinfamilie, Single</a>
+  <span class="menu-translation pl">Życie: duża rodzina, mała rodzina, singiel</span>
+  <span class="menu-translation ua">Життя: велика родина, мала родина, самотній</span>
+  <span class="menu-translation ru">Жизнь: большая семья, малая семья, одиночка</span>
+  <span class="menu-translation ar">العيش: أسرة كبيرة، أسرة صغيرة، عازب</span>
+</li>
+<li class="menu-item">
+  <a href="themen/beruf-familie.html">Beruf und Familie</a>
+  <span class="menu-translation pl">Zawód i rodzina</span>
+  <span class="menu-translation ua">Робота і родина</span>
+  <span class="menu-translation ru">Работа и семья</span>
+  <span class="menu-translation ar">المهنة والأسرة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/reisen.html">Reisen / Urlaub</a>
+  <span class="menu-translation pl">Podróże / Urlop</span>
+  <span class="menu-translation ua">Подорожі / Відпустка</span>
+  <span class="menu-translation ru">Путешествия / Отпуск</span>
+  <span class="menu-translation ar">السفر / الإجازة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/freizeit.html">Freizeit und Familie</a>
+  <span class="menu-translation pl">Czas wolny i rodzina</span>
+  <span class="menu-translation ua">Вільний час і родина</span>
+  <span class="menu-translation ru">Свободное время и семья</span>
+  <span class="menu-translation ar">وقت الفراغ والأسرة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/sport.html">Freizeit und Sport</a>
+  <span class="menu-translation pl">Czas wolny i sport</span>
+  <span class="menu-translation ua">Вільний час і спорт</span>
+  <span class="menu-translation ru">Свободное время и спорт</span>
+  <span class="menu-translation ar">وقت الفراغ والرياضة</span>
+</li>
+<li class="menu-item">
+  <a href="themen/umzug.html">Umzug</a>
+  <span class="menu-translation pl">Przeprowadzka</span>
+  <span class="menu-translation ua">Переїзд</span>
+  <span class="menu-translation ru">Переезд</span>
+  <span class="menu-translation ar">النقل</span>
+</li>
+<li class="menu-item">
+  <a href="themen/behorden.html">Behörden, Ämter</a>
+  <span class="menu-translation pl">Urzędy</span>
+  <span class="menu-translation ua">Органи влади, управління</span>
+  <span class="menu-translation ru">Органы власти, управления</span>
+  <span class="menu-translation ar">السلطات، المكاتب</span>
+</li>
+</ul>
+
+</body>
+</html>

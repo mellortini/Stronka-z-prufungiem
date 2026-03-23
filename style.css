@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-top: 25px;
+}
+
+.lang-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.back-button:hover {
+  background: #555;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* menu główne */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.menu-item a {
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.menu-item a:hover {
+  color: #2b7cff;
+}
+
+.menu-translation {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 4px;
+  padding-left: 10px;
+}
+
+/* języki */
+.de { color: black; }
+.pl { color: #2b7cff; display: none; }
+.ua { color: #2e8b57; display: none; }
+.ru { color: #8b0000; display: none; }
+.ar { color: #b8860b; direction: rtl; text-align: right; display: none; }
+
+/* tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 6px;
+}
+
+/* kolumny */
+.columns {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  width: 50%;
+  background: #fff;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .columns {
+    flex-direction: column;
+  }
+  .column {
+    width: 100%;
+  }
+}
