@@ -8,8 +8,13 @@
 
 <body>
 
-<h1>German B1 - Tematy</h1>
-<p style="text-align: center;">Wybierz temat do nauki / Wähle ein Thema zum Lernen</p>
+<h1>German B1 - <span class="title-trans pl">Tematy</span><span class="title-trans ua">Теми</span><span class="title-trans ru">Темы</span><span class="title-trans ar">المواضيع</span></h1>
+<p style="text-align: center;">
+  <span class="subtitle-trans pl">Wybierz temat do nauki / Wähle ein Thema zum Lernen</span>
+  <span class="subtitle-trans ua">Виберіть тему для вивчення / Wähle ein Thema zum Lernen</span>
+  <span class="subtitle-trans ru">Выберите тему для изучения / Wähle ein Thema zum Lernen</span>
+  <span class="subtitle-trans ar">اختر موضوعًا للتعلم / Wähle ein Thema zum Lernen</span>
+</p>
 
 <div class="lang-buttons">
   <button onclick="setLangMenu('pl')">PL</button>
@@ -23,7 +28,18 @@ function setLangMenu(lang) {
   const langs = ['pl', 'ua', 'ru', 'ar'];
   
   langs.forEach(l => {
+    // Handle menu items
     document.querySelectorAll('.menu-translation.' + l).forEach(el => {
+      el.style.display = (lang === 'all' || lang === l) ? 'block' : 'none';
+    });
+    
+    // Handle title translations
+    document.querySelectorAll('.title-trans.' + l).forEach(el => {
+      el.style.display = (lang === 'all' || lang === l) ? 'inline' : 'none';
+    });
+
+    // Handle subtitle translations
+    document.querySelectorAll('.subtitle-trans.' + l).forEach(el => {
       el.style.display = (lang === 'all' || lang === l) ? 'block' : 'none';
     });
   });
