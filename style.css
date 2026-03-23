@@ -1,118 +1,412 @@
+/* 
+  MINIMALIST DARK - Design System 
+  Atmospheric Depth | Warm Amber Accents | Glass Morphism
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- PALETTE --- */
+  --bg-depth: #0A0A0F;       /* Deep slate - main background */
+  --bg-surface: #12121A;     /* Slightly elevated */
+  --bg-card: rgba(26, 26, 36, 0.6); /* Glass card base */
+  --bg-card-hover: rgba(26, 26, 36, 0.8);
+  
+  --text-primary: #FAFAFA;   /* Near white */
+  --text-secondary: #A1A1AA; /* Zinc-400 - muted but readable */
+  --text-muted: #71717A;     /* Zinc-500 */
+  
+  --accent: #F59E0B;         /* Amber-500 */
+  --accent-glow: rgba(245, 158, 11, 0.15);
+  --accent-text: #0A0A0F;    /* Dark text on amber */
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  
+  /* --- TYPOGRAPHY --- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* --- SPACING & RADIUS --- */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  --container-width: 72rem; /* max-w-6xl */
+  
+  /* --- EFFECTS --- */
+  --shadow-glow-sm: 0 0 20px rgba(245, 158, 11, 0.15);
+  --shadow-glow-btn: 0 0 20px rgba(245, 158, 11, 0.4);
+  --transition-fast: 200ms ease-out;
+  --transition-smooth: 300ms ease-out;
+}
+
+/* --- GLOBAL RESET & ATMOSPHERE --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  background: #f5f5f5;
+  background-color: var(--bg-depth);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ambient Orbs - The "Glow" in the darkness */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: -10%;
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- LAYOUT --- */
+body > * {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Add generous spacing to the main content wrapper if it exists, or body direct children */
+h1 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: -0.025em; /* tracking-tight */
+  font-weight: 600;
 }
 
 h1 {
-  text-align: center;
+  font-size: 2.5rem; /* 4xl */
+  background: linear-gradient(to bottom right, #fff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  h1 { font-size: 3.5rem; }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent); /* Subtle nod to the accent in headers */
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
 }
 
 .subtitle {
   text-align: center;
-  color: gray;
-  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin-bottom: 3rem;
 }
 
-.section {
-  margin-top: 25px;
-}
-
-.lang-buttons {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.back-button {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 8px 16px;
-  background: #333;
-  color: #fff;
+/* --- COMPONENTS: BUTTONS --- */
+button, .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
   text-decoration: none;
-  border-radius: 4px;
+}
+
+/* Primary / Active State */
+button:hover, .back-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow-btn);
+}
+
+button:active, .back-button:active {
+  transform: scale(0.98);
+}
+
+/* Language Buttons Container */
+.lang-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.lang-buttons button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  min-width: 60px;
+}
+
+.lang-buttons button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  box-shadow: none; /* Subtle hover for these */
+}
+
+/* Active state for lang buttons (simulated since JS handles logic, but we can style focus) */
+.lang-buttons button:focus {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* Back Button - Special Styling */
+.back-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
 }
 
 .back-button:hover {
-  background: #555;
+  color: var(--accent);
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.2);
+  box-shadow: var(--shadow-glow-sm);
 }
 
-button {
-  margin: 5px;
-  padding: 6px 12px;
-  cursor: pointer;
+@media (max-width: 768px) {
+  .back-button {
+    position: static;
+    display: block;
+    width: fit-content;
+    margin: 1rem auto;
+  }
 }
 
-/* menu główne */
+/* --- COMPONENTS: GLASS CARDS --- */
+.section, .menu-item {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all var(--transition-smooth);
+}
+
+.section:hover, .menu-item:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- INDEX MENU GRID --- */
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+}
+
+@media (min-width: 768px) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .menu-item {
-  margin-bottom: 15px;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 0; /* Override generic margin */
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(245, 158, 11, 0.3);
 }
 
 .menu-item a {
-  font-size: 1.1em;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  margin-bottom: 0.75rem;
+  display: block;
 }
 
-.menu-item a:hover {
-  color: #2b7cff;
+.menu-item a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Make whole card clickable */
 }
 
 .menu-translation {
-  display: block;
-  font-size: 0.9em;
-  color: #666;
-  margin-top: 4px;
-  padding-left: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
-/* języki */
-.de { color: black; }
-.pl { color: #2b7cff; display: none; }
-.ua { color: #2e8b57; display: none; }
-.ru { color: #8b0000; display: none; }
-.ar { color: #b8860b; direction: rtl; text-align: right; display: none; }
-
-/* tabela */
+/* --- TABLES --- */
 table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  font-size: 0.95rem;
 }
 
-td, th {
-  border: 1px solid #ccc;
-  padding: 6px;
+th {
+  text-align: left;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-/* kolumny */
+td {
+  padding: 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: color 0.2s;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* First column (German) highlight */
+td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* --- LISTS IN CONTENT --- */
+.section ul {
+  display: block; /* Reset grid */
+  max-width: 100%;
+}
+
+.section li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.section li::before {
+  content: '•';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.section li b {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* --- COLUMNS FOR PROS/CONS --- */
 .columns {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.column {
-  width: 50%;
-  background: #fff;
-  padding: 10px;
-}
-
-@media (max-width: 600px) {
+@media (min-width: 768px) {
   .columns {
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
   }
-  .column {
-    width: 100%;
-  }
+}
+
+.column h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* --- UTILITIES --- */
+.de {
+  /* German text remains primary/white */
+  color: var(--text-primary);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.pl, .ua, .ru, .ar {
+  /* Translated text uses the accent amber color */
+  color: var(--accent);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
